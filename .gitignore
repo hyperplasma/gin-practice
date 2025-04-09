@@ -4,4 +4,7 @@
 .DS_Store
 
 .env
-.iml
+*.iml
+out
+build
+*.log
