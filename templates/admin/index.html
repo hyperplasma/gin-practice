@@ -1,0 +1,38 @@
+{{ define "admin/index.html" }}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <h2>{{.title}}</h2>
+
+    <!--循环遍历数据-->
+    <ul>
+        {{range $key, $value := .langs}}
+            <li>{{$key}} - {{$value}}</li>
+        {{else}}
+            Nope.
+        {{end}}
+    </ul>
+    <br>
+    <ul>
+        {{range $key, $value := .newsList}}
+            <li>{{$key}} - {{$value.Title}} - {{$value.Content}}</li>
+        {{else}}
+            今日无新闻
+        {{end}}
+    </ul>
+    <br>
+    <ul>
+        {{range $key, $value := .emptySlice}}
+            <li>{{$key}} - {{$value}}</li>
+        {{else}}
+            <li>数组中无数据！</li>
+        {{end}}
+    </ul>
+</body>
+</html>
+{{ end }}
